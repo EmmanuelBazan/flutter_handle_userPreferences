@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_handle_user_preferences/widgets/side_menu.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImagesScreen extends StatefulWidget {
@@ -8,6 +9,8 @@ class ImagesScreen extends StatefulWidget {
 
   @override
   State<ImagesScreen> createState() => _ImagesScreenState();
+
+  static const routeName = 'images';
 }
 
 class _ImagesScreenState extends State<ImagesScreen> {
@@ -20,6 +23,7 @@ class _ImagesScreenState extends State<ImagesScreen> {
         appBar: AppBar(
           title: const Text('Multiple Images'),
         ),
+        drawer: const SideMenu(),
         body: SafeArea(
           child: Column(
             children: [

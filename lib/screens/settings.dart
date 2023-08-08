@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_handle_user_preferences/widgets/side_menu.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class SettingsScreen extends StatelessWidget {
         title: const Text('Settings'),
         centerTitle: true,
       ),
+      drawer: const SideMenu(),
       body: const Center(
         child: Text('SettingsScreen'),
       ),

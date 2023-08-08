@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_handle_user_preferences/screens/home.dart';
+import 'package:flutter_handle_user_preferences/screens/images.dart';
 import 'package:flutter_handle_user_preferences/screens/settings.dart';
 
 void main() => runApp(const MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (_) => const HomeScreen(),
-        SettingsScreen.routeName: (_) => const SettingsScreen()
+        SettingsScreen.routeName: (_) => const SettingsScreen(),
+        ImagesScreen.routeName: (_) => const ImagesScreen()
       },
     );
   }
