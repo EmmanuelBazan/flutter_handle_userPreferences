@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_handle_user_preferences/screens/home.dart';
 import 'package:flutter_handle_user_preferences/screens/images.dart';
 import 'package:flutter_handle_user_preferences/screens/settings.dart';
+import 'package:flutter_handle_user_preferences/shared_preferences/preferences.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Preferences.init();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
