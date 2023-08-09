@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_handle_user_preferences/widgets/side_menu.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
 
   static const routeName = 'settings';
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  bool isDarkmode = false;
+  int gender = 1;
+  String name = 'Emmanuel';
 
   @override
   Widget build(BuildContext context) {
@@ -23,29 +32,42 @@ class SettingsScreen extends StatelessWidget {
             ),
             const Divider(),
             SwitchListTile(
-              value: true,
-              onChanged: (value) {},
+              value: isDarkmode,
+              onChanged: (value) {
+                isDarkmode = value;
+                setState(() {});
+              },
               title: const Text('Darkmode'),
             ),
             const Divider(),
             RadioListTile(
               value: 1,
-              groupValue: 1,
-              onChanged: (value) {},
+              groupValue: gender,
+              onChanged: (value) {
+                gender = value!;
+                setState(() {});
+              },
               title: const Text('Masculino'),
             ),
             const Divider(),
             RadioListTile(
-              value: 1,
-              groupValue: 1,
-              onChanged: (value) {},
+              value: 2,
+              groupValue: gender,
+              onChanged: (value) {
+                gender = value!;
+                setState(() {});
+              },
               title: const Text('Femenino'),
             ),
             const Divider(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 21),
               child: TextFormField(
-                initialValue: 'Emmanuel',
+                initialValue: name,
+                onChanged: (value) {
+                  name = value;
+                  setState(() {});
+                },
                 decoration: const InputDecoration(
                   labelText: 'Nombre',
                   helperText: 'Nombre del usuario',
